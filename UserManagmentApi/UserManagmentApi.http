@@ -1,0 +1,50 @@
+@UserManagmentApi_HostAddress = http://localhost:5077
+
+### Get All Users
+GET {{UserManagmentApi_HostAddress}}/api/users
+Accept: application/json
+
+###
+
+### Create a New User
+POST {{UserManagmentApi_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "John.Doe@email.com",
+  "dateOfBirth": "2000-01-01",
+  "phoneNumber": "1234567890"
+}
+
+###
+
+### Get User by Id
+# Replace <<id>> with the actual user id returned from CreateUser.
+GET {{UserManagmentApi_HostAddress}}/api/users/<<id>>
+Accept: application/json
+
+###
+
+### Update User
+# Replace <<id>> with the actual user id.
+PUT {{UserManagmentApi_HostAddress}}/api/users/<<id>>
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "John.Doe@email.com",
+  "dateOfBirth": "2000-01-01",
+  "phoneNumber": "1234567890"
+}
+
+###
+
+### Delete User
+# Replace <<id>> with the actual user id.
+DELETE {{UserManagmentApi_HostAddress}}/api/users/<<id>>
+Accept: application/json
+
+###
